@@ -39,7 +39,7 @@ deactivate nondestructive
 
 VIRTUAL_ENV="/Users/thebeagle/dev/indstudy/cta/venv"
 export VIRTUAL_ENV
-
+alias manage.py='/Users/thebeagle/dev/indstudy/cta/venv/bin/python /Users/thebeagle/dev/indstudy/cta/cta/manage.py'
 _OLD_VIRTUAL_PATH="$PATH"
 PATH="$VIRTUAL_ENV/bin:$PATH"
 export PATH
