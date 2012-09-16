@@ -2,6 +2,7 @@
 .pydevproject
 .tmp_index.html.45930~
 venv/*
+*.pyc
 cta/fixtures/*
 dbdump.sql
 my.db
