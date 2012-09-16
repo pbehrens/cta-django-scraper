@@ -6,7 +6,6 @@ anyjson==0.3.3
 billiard==2.7.3.12
 distribute==0.6.15
 dj-database-url==0.2.1
-importlib==1.0.2
 kombu==2.4.5
 ordereddict==1.1
 psycopg2==2.4.5
