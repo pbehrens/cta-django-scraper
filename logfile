@@ -1,0 +1,1 @@
+FATAL:  could not open lock file "/var/pgsql_socket_alt/.s.PGSQL.5432.lock": Permission denied

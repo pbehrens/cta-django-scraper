@@ -43,6 +43,7 @@ for stop in allLines:
 
     
     etaElements = dom.getElementsByTagName('eta')
+    thedegree = 0
     for eta in etaElements:
         # parse the relevant data from the xml response
         station_id = get_tag_value(eta.getElementsByTagName('staId')[0])
@@ -60,30 +61,38 @@ for stop in allLines:
         is_scheduled = get_tag_value(eta.getElementsByTagName('isSch')[0])
         is_delayed = get_tag_value(eta.getElementsByTagName('isDly')[0])
         is_fit = get_tag_value(eta.getElementsByTagName('isFlt')[0])
-        
+        degree = thedegree 
         #Make new trip object and populate with scraped data
         trip = Trip()
-        stop = Stop.objects.get(parent_station=station_id, stop_id=stop_id)
-        trip.station_id = stop
-        trip.stop_id = stop
-        
-        db_route = Route.objects.get(route_id=route)
-        trip.station_name = station_name
-        trip.stop_desc = stop_desc
-        trip.run_number = run_number
-        trip.route = db_route
-        trip.destination = stop
-        trip.destination_name = destination_name
-        trip.route_direction_code = route_direction_code
-        #format datetime string to one that django can use
-        prediction_generated = datetime.datetime.strptime(prediction_generated, '%Y%m%d %H:%M:%S')
-        trip.prediction_generated = prediction_generated
-        
-        expected_arrival = datetime.datetime.strptime(expected_arrival, '%Y%m%d %H:%M:%S')
-        trip.expected_arrival = expected_arrival
-        trip.is_approaching = is_approaching
-        trip.is_scheduled = is_scheduled
-        trip.is_delayed = is_delayed
-        trip.is_fit = is_fit
-        trip.save()
+        print("stop id" + stop_id +"parent id " + station_id)
+        try:
+            stop = Stop.objects.get(parent_station=station_id, stop_id=stop_id)
+            trip.station_id = stop
+            trip.stop_id = stop
+    
+            db_route = Route.objects.get(route_id=route)
+            trip.station_name = station_name
+            trip.stop_desc = stop_desc
+            trip.run_number = run_number
+            trip.route = db_route
+            trip.destination = stop
+            trip.destination_name = destination_name
+            trip.route_direction_code = route_direction_code
+            #format datetime string to one that django can use
+            prediction_generated = datetime.datetime.strptime(prediction_generated, '%Y%m%d %H:%M:%S')
+            trip.prediction_generated = prediction_generated
+
+            expected_arrival = datetime.datetime.strptime(expected_arrival, '%Y%m%d %H:%M:%S')
+            trip.expected_arrival = expected_arrival
+            trip.is_approaching = is_approaching
+            trip.is_scheduled = is_scheduled
+            trip.is_delayed = is_delayed
+            trip.is_fit = is_fit
+            trip.degree = thedegree
+            thedegree = thedegree + 1
+            trip.save()
+            
+        except Content.ObjectNotFound:
+            stop = None
+
 

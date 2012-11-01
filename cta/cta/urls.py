@@ -5,6 +5,10 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
+   # all my other url mappings
+   (r'^api/', include('cta.api.urls')),
+   url(r'^admin/', include(admin.site.urls)),
+)
     # Examples:
     # url(r'^$', 'cta.views.home', name='home'),
     # url(r'^cta/', include('cta.foo.urls')),
@@ -13,5 +17,4 @@ urlpatterns = patterns('',
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
     # Uncomment the next line to enable the admin:
-    url(r'^admin/', include(admin.site.urls)),
-)
+

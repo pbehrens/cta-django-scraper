@@ -19,3 +19,17 @@ class Trip(models.Model):
     is_scheduled = models.IntegerField()
     is_fit = models.IntegerField()
     is_delayed = models.IntegerField()
+    degree = models.IntegerField()
+    
+
+class Section(models.Model):
+	start_id = models.ForeignKey(Stop, to_field='stop_id', related_name='section_start_id')
+	end_id = models.ForeignKey(Stop, to_field='stop_id', related_name='section_end_id')
+	run_number = models.IntegerField()
+	line = models.CharField(max_length=200)
+	
+class DumpSetting(models.Model):
+	last_retrieved = models.IntegerField()
+	time_retrieved = models.DateTimeField()
+	
+	
