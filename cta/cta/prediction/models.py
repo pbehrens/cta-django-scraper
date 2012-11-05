@@ -18,3 +18,9 @@ class Prediction(models.Model):
 
     def is_string(val):
         return False
+
+class Average(models):
+	
+	time_update= models.DateTimeField()
+	
+    
