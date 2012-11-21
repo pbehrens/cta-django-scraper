@@ -135,7 +135,7 @@ INSTALLED_APPS = (
     'south',
     'cta.scraper',
     'cta.trips',
-	'cta.prediction',
+	# 'cta.prediction',
     
     
     

@@ -12,15 +12,3 @@ class Prediction(models.Model):
     location_type = models.CharField(max_length=150, null=True)
     parent_station = models.IntegerField()
     wheelchair_boarding = models.IntegerField(null=True)
-    
-    def __unicode__(self):
-        return self.name
-
-    def is_string(val):
-        return False
-
-class Average(models):
-	
-	time_update= models.DateTimeField()
-	
-    

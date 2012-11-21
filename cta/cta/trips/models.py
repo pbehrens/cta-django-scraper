@@ -20,6 +20,7 @@ class Trip(models.Model):
     is_fit = models.IntegerField()
     is_delayed = models.IntegerField()
     degree = models.IntegerField()
+	# time_scraped = models.models.DateTimeField()
     
 
 class Section(models.Model):
