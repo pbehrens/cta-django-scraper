@@ -1,11 +1,7 @@
-############ All you need to modify is below ############
-# Full path and name to your csv file
 csv_filepathname="/Users/thebeagle/dev/indstudy/cta/cta/fixtures/redline2.txt"
 # Full path to the directory immediately above your django project directory
 project_folder="/Users/thebeagle/dev/indstudy/cta/cta"
 project_parent="/Users/thebeagle/dev/indstudy/cta/cta/cta"
-
-############ All you need to modify is above ############
 
 import sys,os
 sys.path.append(project_folder)

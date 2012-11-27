@@ -6,4 +6,4 @@ class TripAdmin(admin.ModelAdmin):
     list_display = ('stop_id', 'stop_name','prediction_time', 'is_delayed', 'wheelchair_boarding', 'wheelchair_boarding')
 
     pass
-admin.site.register(Prediction, PredictionAdmin)
+admin.site.register(Prediction)

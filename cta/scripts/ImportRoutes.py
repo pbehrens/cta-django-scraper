@@ -1,5 +1,5 @@
 project_folder="/Users/thebeagle/dev/indstudy/cta/cta"
-# Full path to the directory immediately above your django project directory
+
 project_parent="/Users/thebeagle/dev/indstudy/cta/cta/cta"
 csv_filepathname="/Users/thebeagle/dev/indstudy/cta/cta/fixtures/routes.txt"
 
