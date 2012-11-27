@@ -1,4 +1,9 @@
 from django.contrib import admin
-from cta.prediction.models import Prediction
+from cta.trips.models import Prediction
 
-admin.site.register(Prediction)
+
+class TripAdmin(admin.ModelAdmin):
+    list_display = ('stop_id', 'stop_name','prediction_time', 'is_delayed', 'wheelchair_boarding', 'wheelchair_boarding')
+
+    pass
+admin.site.register(Prediction, PredictionAdmin)
